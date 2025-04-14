@@ -1,0 +1,29 @@
+\doxysection{char\+Queue\+ADT.\+h}
+\hypertarget{char_queue_a_d_t_8h_source}{}\label{char_queue_a_d_t_8h_source}\index{include/charQueueADT.h@{include/charQueueADT.h}}
+\mbox{\hyperlink{char_queue_a_d_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{comment}{/*\ Un\ tipo\ di\ dato\ astratto\ per\ le\ code\ di\ char\ */}}
+\DoxyCodeLine{00002\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structchar_queue}{charQueue}}\ *\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}};}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{comment}{/*\ @brief\ Restituisce\ una\ coda\ vuota,\ se\ non\ trova\ memoria\ restituisce\ NULL\ */}}
+\DoxyCodeLine{00005\ \mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ \mbox{\hyperlink{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090}{mkQueue}}();}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{comment}{/*\ @brief\ Distrugge\ la\ coda,\ recuperando\ la\ memoria\ */}}
+\DoxyCodeLine{00008\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910}{dsQueue}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ *pq);}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{comment}{/*\ @brief\ Aggiunge\ un\ elemento\ in\ fondo\ alla\ coda,\ restituisce\ esito\ 0/1\ */}}
+\DoxyCodeLine{00011\ \_Bool\ \mbox{\hyperlink{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3}{enqueue}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ q,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ e);}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{comment}{/*\ @brief\ Toglie\ e\ restituisce\ l'elemento\ in\ testa\ alla\ coda,\ restituisce\ esito\ 0/1\ */}}
+\DoxyCodeLine{00014\ \_Bool\ \mbox{\hyperlink{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d}{dequeue}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ q,\ \textcolor{keywordtype}{char}*res);}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{comment}{/*\ @brief\ Controlla\ se\ la\ coda\ è\ vuota\ */}}
+\DoxyCodeLine{00017\ \_Bool\ \mbox{\hyperlink{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837}{isEmpty}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ q);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{comment}{/*\ @brief\ Restituisce\ il\ numero\ degli\ elementi\ presenti\ nella\ coda\ */}}
+\DoxyCodeLine{00020\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3}{size}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ q);}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{comment}{/*\ @brief\ Restituisce\ l'elemento\ nella\ posizione\ data\ (a\ partire\ dalla\ testa\ con\ indice\ zero)\ (senza\ toglierlo),\ restituisce\ esito\ 0/1\ */}}
+\DoxyCodeLine{00023\ \_Bool\ \mbox{\hyperlink{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493}{peek}}(\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{CharQueueADT}}\ q,\ \textcolor{keywordtype}{int}\ position,\ \textcolor{keywordtype}{char}*\ res);}
+
+\end{DoxyCode}

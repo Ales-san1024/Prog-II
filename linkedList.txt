@@ -1,0 +1,29 @@
+Linked List
+
+o sono vuote
+
+->
+
+oppure è ostituita da un elemento seguito da una lista linkata
+
+a -> b ->
+
+A seconda della posizione ogni elemeento ha dei ruoli:
+predecessore/successore;
+primo nodo della lista/Head (se la lista non è vuota)
+ultimo/Tail
+
+
+struct node {
+    tipi dati...
+  struct node* next;
+};
+
+struct node vrb;
+
+vrb = (struct node*) malloc(sizeOf(Struct node));
+
+//si inizializzano i campi e poi
+vrb->next = NULL;
+
+typedef struct node Lista;

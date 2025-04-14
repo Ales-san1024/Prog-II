@@ -1,0 +1,6 @@
+{
+  "files.associations": {
+    "intsortedsetadt.h": "c",
+    "intlinkedlistsortedsetadt.h": "c"
+  }
+}

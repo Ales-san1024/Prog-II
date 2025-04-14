@@ -1,0 +1,137 @@
+\doxysection{Riferimenti per il file include/liste.h}
+\hypertarget{liste_8h}{}\label{liste_8h}\index{include/liste.h@{include/liste.h}}
+\doxysubsubsection*{Composti}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlista}{lista}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Ridefinizioni di tipo (typedef)}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structlista}{lista}} \mbox{\hyperlink{liste_8h_a83d34a2ef405ccb8e18cf64ba8d2cb0d}{Lista}}
+\item 
+typedef struct \mbox{\hyperlink{structlista}{lista}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{liste_8h_a30c822ec1fb28b1ed8311aa6b789c821}{print\+Lista}} (\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} l)
+\begin{DoxyCompactList}\small\item\em Stampa ogni elemento di una lista dalla testa alla coda. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{liste_8h_a072fc231b38821cdf3049743a0a384c7}{add\+Node\+To\+Tail}} (\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}l, char c)
+\begin{DoxyCompactList}\small\item\em Aggiunge un elemento in coda alla lista. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{liste_8h_a7a92cce97e5d362b4f8d5b0b232be332}{delete\+List}} (\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}l)
+\begin{DoxyCompactList}\small\item\em Elimina l\textquotesingle{}intera lista e libera la memoria. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{liste_8h_a7debf8a2640209f814d27463e9ed327c}{reverse\+List}} (\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}l)
+\begin{DoxyCompactList}\small\item\em Inverte l\textquotesingle{}ordine della lista. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{liste_8h_a71a59ef5f74798ee2652377e3585abee}{remove\+Char}} (\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}l, char c)
+\begin{DoxyCompactList}\small\item\em Rimuove la prima istanza di un carattere dalla lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentazione delle ridefinizioni di tipo (typedef)}
+\Hypertarget{liste_8h_a252602d2a637d45afa3943d31cb9f650}\index{liste.h@{liste.h}!L\_Ptr@{L\_Ptr}}
+\index{L\_Ptr@{L\_Ptr}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{L\_Ptr}{L\_Ptr}}
+{\footnotesize\ttfamily \label{liste_8h_a252602d2a637d45afa3943d31cb9f650} 
+typedef struct \mbox{\hyperlink{structlista}{lista}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}}}
+
+\Hypertarget{liste_8h_a83d34a2ef405ccb8e18cf64ba8d2cb0d}\index{liste.h@{liste.h}!Lista@{Lista}}
+\index{Lista@{Lista}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{Lista}{Lista}}
+{\footnotesize\ttfamily \label{liste_8h_a83d34a2ef405ccb8e18cf64ba8d2cb0d} 
+typedef struct \mbox{\hyperlink{structlista}{lista}} \mbox{\hyperlink{liste_8h_a83d34a2ef405ccb8e18cf64ba8d2cb0d}{Lista}}}
+
+
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{liste_8h_a072fc231b38821cdf3049743a0a384c7}\index{liste.h@{liste.h}!addNodeToTail@{addNodeToTail}}
+\index{addNodeToTail@{addNodeToTail}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{addNodeToTail()}{addNodeToTail()}}
+{\footnotesize\ttfamily \label{liste_8h_a072fc231b38821cdf3049743a0a384c7} 
+void add\+Node\+To\+Tail (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}}]{l}{, }\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un elemento in coda alla lista. 
+
+Questa funzione aggiunge un nodo con un carattere specificato alla fine della lista. Se la lista è vuota, crea il primo nodo.
+
+
+\begin{DoxyParams}{Parametri}
+{\em l} & Puntatore alla testa della lista. Il puntatore sarà aggiornato se necessario per mantenere la lista collegata correttamente. \\
+\hline
+{\em c} & Il carattere da aggiungere come nuovo nodo alla lista. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{liste_8h_a7a92cce97e5d362b4f8d5b0b232be332}\index{liste.h@{liste.h}!deleteList@{deleteList}}
+\index{deleteList@{deleteList}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{deleteList()}{deleteList()}}
+{\footnotesize\ttfamily \label{liste_8h_a7a92cce97e5d362b4f8d5b0b232be332} 
+void delete\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Elimina l\textquotesingle{}intera lista e libera la memoria. 
+
+Questa funzione elimina ogni elemento della lista a partire dal fondo
+
+
+\begin{DoxyParams}{Parametri}
+{\em l} & puntatore alla testa della lista. Al termine della funzione l sarà settato a NULL. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{liste_8h_a30c822ec1fb28b1ed8311aa6b789c821}\index{liste.h@{liste.h}!printLista@{printLista}}
+\index{printLista@{printLista}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{printLista()}{printLista()}}
+{\footnotesize\ttfamily \label{liste_8h_a30c822ec1fb28b1ed8311aa6b789c821} 
+void print\+Lista (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}}}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Stampa ogni elemento di una lista dalla testa alla coda. 
+
+Questa funzione stampa ogni carattere contenuto nei nodi della lista a partire dal primo nodo (head) fino all\textquotesingle{}ultimo (tail).
+
+
+\begin{DoxyParams}{Parametri}
+{\em l} & Puntatore alla testa della lista. Se la lista è vuota, non stampa nulla. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{liste_8h_a71a59ef5f74798ee2652377e3585abee}\index{liste.h@{liste.h}!removeChar@{removeChar}}
+\index{removeChar@{removeChar}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{removeChar()}{removeChar()}}
+{\footnotesize\ttfamily \label{liste_8h_a71a59ef5f74798ee2652377e3585abee} 
+\+\_\+\+Bool remove\+Char (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}}]{l}{, }\item[{char}]{c}{}\end{DoxyParamCaption})}
+
+
+
+Rimuove la prima istanza di un carattere dalla lista. 
+
+Questa funzione rimuove dalla lista la prima apparizione di un carattere c
+
+
+\begin{DoxyParams}{Parametri}
+{\em l} & puntatore alla testa della lista. Al termine della funzione l potrà essere invariata o puntare al secondo elemento, qualora l\textquotesingle{}elemento da eliminare sia in testa \\
+\hline
+{\em c} & il carattere da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Restituisce}
+true\+: se c è stato rimosso false\+: se c non è stato rimosso 
+\end{DoxyReturn}
+\Hypertarget{liste_8h_a7debf8a2640209f814d27463e9ed327c}\index{liste.h@{liste.h}!reverseList@{reverseList}}
+\index{reverseList@{reverseList}!liste.h@{liste.h}}
+\doxysubsubsection{\texorpdfstring{reverseList()}{reverseList()}}
+{\footnotesize\ttfamily \label{liste_8h_a7debf8a2640209f814d27463e9ed327c} 
+void reverse\+List (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{liste_8h_a252602d2a637d45afa3943d31cb9f650}{L\+\_\+\+Ptr}} \texorpdfstring{$\ast$}{*}}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Inverte l\textquotesingle{}ordine della lista. 
+
+Questa funzione inverte l\textquotesingle{}ordine degli elementi della lista es\+: a-\/\texorpdfstring{$>$}{>}b-\/\texorpdfstring{$>$}{>}c =\texorpdfstring{$>$}{>} c-\/\texorpdfstring{$>$}{>}b-\/\texorpdfstring{$>$}{>}a
+
+
+\begin{DoxyParams}{Parametri}
+{\em l} & puntatore alla testa della lista. Al termine della funzione l punterà alla coda, che sarà la nuova testa. \\
+\hline
+\end{DoxyParams}

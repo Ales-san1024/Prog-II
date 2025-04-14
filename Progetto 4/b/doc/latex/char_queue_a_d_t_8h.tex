@@ -1,0 +1,106 @@
+\doxysection{Riferimenti per il file include/char\+Queue\+ADT.h}
+\hypertarget{char_queue_a_d_t_8h}{}\label{char_queue_a_d_t_8h}\index{include/charQueueADT.h@{include/charQueueADT.h}}
+\doxysubsubsection*{Ridefinizioni di tipo (typedef)}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structchar_queue}{char\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Funzioni}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \mbox{\hyperlink{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090}{mk\+Queue}} ()
+\begin{DoxyCompactList}\small\item\em Restituisce una coda vuota, se non trova memoria restituisce NULL. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910}{ds\+Queue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \texorpdfstring{$\ast$}{*}pq)
+\begin{DoxyCompactList}\small\item\em Distrugge la coda, recuperando la memoria. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3}{enqueue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, const char e)
+\begin{DoxyCompactList}\small\item\em Aggiunge un elemento in fondo alla coda, restituisce esito 0/1. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d}{dequeue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, char \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Toglie e restituisce l\textquotesingle{}elemento in testa alla coda, restituisce esito 0/1. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837}{is\+Empty}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q)
+\begin{DoxyCompactList}\small\item\em Controlla se la coda è vuota. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3}{size}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q)
+\begin{DoxyCompactList}\small\item\em Restituisce il numero degli elementi presenti nella coda. \end{DoxyCompactList}\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493}{peek}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, int position, char \texorpdfstring{$\ast$}{*}res)
+\begin{DoxyCompactList}\small\item\em Restituisce l\textquotesingle{}elemento nella posizione data (a partire dalla testa con indice zero) (senza toglierlo), restituisce esito 0/1. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentazione delle ridefinizioni di tipo (typedef)}
+\Hypertarget{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}\index{charQueueADT.h@{charQueueADT.h}!CharQueueADT@{CharQueueADT}}
+\index{CharQueueADT@{CharQueueADT}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{CharQueueADT}{CharQueueADT}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5} 
+typedef struct \mbox{\hyperlink{structchar_queue}{char\+Queue}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}
+
+Un tipo di dato astratto per le code di char 
+
+\doxysubsection{Documentazione delle funzioni}
+\Hypertarget{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d}\index{charQueueADT.h@{charQueueADT.h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d} 
+\+\_\+\+Bool dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+
+
+Toglie e restituisce l\textquotesingle{}elemento in testa alla coda, restituisce esito 0/1. 
+
+\Hypertarget{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910}\index{charQueueADT.h@{charQueueADT.h}!dsQueue@{dsQueue}}
+\index{dsQueue@{dsQueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{dsQueue()}{dsQueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910} 
+void ds\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \texorpdfstring{$\ast$}{*}}]{pq}{}\end{DoxyParamCaption})}
+
+
+
+Distrugge la coda, recuperando la memoria. 
+
+\Hypertarget{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3}\index{charQueueADT.h@{charQueueADT.h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3} 
+\+\_\+\+Bool enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{const char}]{e}{}\end{DoxyParamCaption})}
+
+
+
+Aggiunge un elemento in fondo alla coda, restituisce esito 0/1. 
+
+\Hypertarget{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837}\index{charQueueADT.h@{charQueueADT.h}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837} 
+\+\_\+\+Bool is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Controlla se la coda è vuota. 
+
+\Hypertarget{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090}\index{charQueueADT.h@{charQueueADT.h}!mkQueue@{mkQueue}}
+\index{mkQueue@{mkQueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{mkQueue()}{mkQueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090} 
+\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} mk\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce una coda vuota, se non trova memoria restituisce NULL. 
+
+\Hypertarget{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493}\index{charQueueADT.h@{charQueueADT.h}!peek@{peek}}
+\index{peek@{peek}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493} 
+\+\_\+\+Bool peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{int}]{position}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce l\textquotesingle{}elemento nella posizione data (a partire dalla testa con indice zero) (senza toglierlo), restituisce esito 0/1. 
+
+\Hypertarget{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3}\index{charQueueADT.h@{charQueueADT.h}!size@{size}}
+\index{size@{size}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3} 
+int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{}\end{DoxyParamCaption})}
+
+
+
+Restituisce il numero degli elementi presenti nella coda. 
+

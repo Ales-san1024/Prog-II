@@ -1,0 +1,23 @@
+\doxysection{char\+Array\+Queue.\+h}
+\hypertarget{char_array_queue_8h_source}{}\label{char_array_queue_8h_source}\index{include/charArrayQueue.h@{include/charArrayQueue.h}}
+\mbox{\hyperlink{char_array_queue_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{char_queue_a_d_t_8h}{charQueueADT.h}}"{}}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{comment}{/*\ il\ valore\ 8\ può\ essere\ cambiato\ */}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#define\ INITIAL\_CAPACITY\ 8}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structchar_queue}{charQueue}}\ \{}
+\DoxyCodeLine{00007\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structchar_queue_af9701df466396221a447aedb0773f3b6}{capacity}};\ \textcolor{comment}{/*\ capacity\ ==\ INITIAL\ CAPACITY*2\string^n,\ per\ qualche\ numero\ naturale\ n\ >=\ 0\ */}}
+\DoxyCodeLine{00008\ \ \ \ \ \textcolor{keywordtype}{char}*\ \mbox{\hyperlink{structchar_queue_a96254d421062bd627deffc0f5027f8e2}{a}};\ \textcolor{comment}{/*\ array,\ di\ dimensione\ capacity,\ che\ memorizza\ gli\ elementi\ presenti\ nella\ coda\ */}}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structchar_queue_a59054dcd7e89fe8342b68c1e1920eaed}{size}};\ \textcolor{comment}{/*\ numero\ di\ elementi\ presenti\ nella\ coda\ (0\ <=\ size\ <=\ capacity)\ */}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structchar_queue_a65726911e8ff25001403d54d09ded445}{rear}};\ \textcolor{comment}{/*\ prima\ posizione\ libera\ in\ a\ (dove\ sarà\ memorizzato\ il\ prossimo\ elemento\ della\ coda\ (0\ <=\ rear\ <=\ capacity-\/1)\ */}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structchar_queue_a4edbdf204916d505762c5652422267c9}{front}};\ \textcolor{comment}{/*\ posizione\ in\ a\ dove\ (se\ size\ >\ 0)\ è\ memorizzato\ il\ primo\ elemento\ della\ coda\ (0\ <=\ front\ <=\ capacity-\/1)\ */}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{comment}{/*\ (front==rear)\ se\ e\ solo\ se\ ((size\ ==\ 0)\ ||\ (size\ ==\ capacity))\ */}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{comment}{/*\ Gli\ elementi\ della\ coda\ sono\ in:\ a[front..rear-\/1]\ se\ rear\ >\ front,\ e\ in\ a[front..capacity-\/1],a[0..rear-\/1],\ se\ rear\ <=\ front\ */}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{comment}{/*\ L'array\ si\ espande\ di\ un\ fattore\ due\ quando\ si\ riempie,\ e\ si\ dimezza\ (se\ capacity\ >\ INITIAL\_CAPACITY)\ */}}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{comment}{/*\ quando\ size\ scende\ a\ capacity/4\ (parametri\ personalizzabili)\ */}\ \ \ \ \ \ }
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{comment}{/*\ Se\ capacity\ >\ INITIAL\_CAPACITY,\ allora\ il\ numero\ di\ elementi\ in\ coda\ è\ >=\ capacity/4\ */}}
+\DoxyCodeLine{00017\ \};}
+
+\end{DoxyCode}

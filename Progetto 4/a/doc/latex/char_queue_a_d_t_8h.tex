@@ -1,0 +1,78 @@
+\doxysection{include/char\+Queue\+ADT.h File Reference}
+\hypertarget{char_queue_a_d_t_8h}{}\label{char_queue_a_d_t_8h}\index{include/charQueueADT.h@{include/charQueueADT.h}}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structchar_queue}{char\+Queue}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \mbox{\hyperlink{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090}{mk\+Queue}} ()
+\item 
+void \mbox{\hyperlink{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910}{ds\+Queue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \texorpdfstring{$\ast$}{*}pq)
+\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3}{enqueue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, const char e)
+\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d}{dequeue}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, char \texorpdfstring{$\ast$}{*}res)
+\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837}{is\+Empty}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q)
+\item 
+int \mbox{\hyperlink{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3}{size}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q)
+\item 
+\+\_\+\+Bool \mbox{\hyperlink{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493}{peek}} (\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} q, int position, char \texorpdfstring{$\ast$}{*}res)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\Hypertarget{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}\index{charQueueADT.h@{charQueueADT.h}!CharQueueADT@{CharQueueADT}}
+\index{CharQueueADT@{CharQueueADT}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{CharQueueADT}{CharQueueADT}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5} 
+typedef struct \mbox{\hyperlink{structchar_queue}{char\+Queue}}\texorpdfstring{$\ast$}{*} \mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}
+
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d}\index{charQueueADT.h@{charQueueADT.h}!dequeue@{dequeue}}
+\index{dequeue@{dequeue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{dequeue()}{dequeue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_ae18a60eacacf0a16328cab9447a6e58d} 
+\+\_\+\+Bool dequeue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910}\index{charQueueADT.h@{charQueueADT.h}!dsQueue@{dsQueue}}
+\index{dsQueue@{dsQueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{dsQueue()}{dsQueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a97684dda4f57d49c659d16628029b910} 
+void ds\+Queue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} \texorpdfstring{$\ast$}{*}}]{pq}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3}\index{charQueueADT.h@{charQueueADT.h}!enqueue@{enqueue}}
+\index{enqueue@{enqueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{enqueue()}{enqueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_afeb50317b40037a6e1ea9c5e7e5ad0f3} 
+\+\_\+\+Bool enqueue (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{const char}]{e}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837}\index{charQueueADT.h@{charQueueADT.h}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_aa6809933ba424eecfe8f8ed9e2517837} 
+\+\_\+\+Bool is\+Empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090}\index{charQueueADT.h@{charQueueADT.h}!mkQueue@{mkQueue}}
+\index{mkQueue@{mkQueue}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{mkQueue()}{mkQueue()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a5a6248ee6b2034e383c59995b302a090} 
+\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}} mk\+Queue (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493}\index{charQueueADT.h@{charQueueADT.h}!peek@{peek}}
+\index{peek@{peek}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{peek()}{peek()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a60bc687cd961472a351dad9a1428f493} 
+\+\_\+\+Bool peek (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{, }\item[{int}]{position}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{res}{}\end{DoxyParamCaption})}
+
+\Hypertarget{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3}\index{charQueueADT.h@{charQueueADT.h}!size@{size}}
+\index{size@{size}!charQueueADT.h@{charQueueADT.h}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{char_queue_a_d_t_8h_a4e0172d93d7d3b2f8bed5dfe374a2fd3} 
+int size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{char_queue_a_d_t_8h_a459c1a27c790b723eb992a28f87446e5}{Char\+Queue\+ADT}}}]{q}{}\end{DoxyParamCaption})}
+
