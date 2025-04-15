@@ -30,20 +30,52 @@ void dsQueue(CharQueueADT *pq) {
   } 
 }
 
-_Bool enqueue(CharQueueADT q, const char e) {
-  if (q->capacity == q->size) return 0;
-  q->a[q->rear] = e;
-  q->size++;
-  q->rear = (q->rear + 1) % q->capacity;
-  return 1;
+_Bool enqueue(CharQueueADT q, const char e){
+    if (q == NULL || q->size == q->capacity) {
+        return 0; 
+    }else{
+        q->a[q->rear] = e;
+        q->rear = (q->rear + 1) % (q->capacity);
+        (q->size) ++;
+        if(q->size == (q->capacity)){
+            int new_capacity = (q->capacity)*2;
+            char* new_array = malloc(sizeof(char) * new_capacity);
+            for(int i = 0; i < q->size; i++){
+                new_array[i] = q->a[(q->front + i) % q->capacity];
+            }
+            free(q->a);
+            q->a = new_array;
+            q->capacity = new_capacity;
+            q->front = 0;
+            q->rear = q->size;
+        }
+        return 1;
 }
 
-_Bool dequeue(CharQueueADT q, char*res) {
-  if (q->size == 0) return 0;
-  *res = q->a[q->front];
-  q->front = (q->front + 1)%q->capacity;
-  q->size--;
-  return 1;  
+}
+
+/** @brief Toglie e restituisce l'elemento in testa alla coda, restituisce esito 0/1 */
+_Bool dequeue(CharQueueADT q, char*res){
+    if (q == NULL || q->size == 0) {
+        return 0; 
+    }else{
+        *res = (q->a[q->front]);
+        (q->front) = (q->front + 1) % (q->capacity);
+        (q->size)--;
+        if(q->size < (q->capacity)/4 && q->capacity>INITIAL_CAPACITY){
+            int new_capacity = q->capacity / 2;
+            char* new_array = malloc(sizeof(char) * new_capacity);            
+            for(int i = 0; i < q->size; i++){
+                new_array[i] = q->a[(q->front + i) % q->capacity];
+            }
+            free(q->a);
+            q->a = new_array;
+            q->capacity = new_capacity;
+            q->front = 0;
+            q->rear = q->size;
+        }
+        return 1;
+ }
 }
 
 _Bool isEmpty(CharQueueADT q) {
