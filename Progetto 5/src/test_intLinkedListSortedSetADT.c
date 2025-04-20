@@ -215,6 +215,13 @@ int check_sset_member() {
   // Creiamo un nuovo set
   IntSortedSetADT set = mkSSet();  
   
+  printf("sseet_member()\n");
+
+  if (sset_member(set, 20)) {
+    printf("FAILED: Expected 20 not to be found in empty set\n");
+    passed = 0;
+  } else printf("OK: 20 not found\n");
+
   // Aggiungiamo alcuni elementi al set
   sset_add(set, 10);
   sset_add(set, 20);
@@ -222,7 +229,6 @@ int check_sset_member() {
   sset_add(set, 40);
   sset_add(set, 50);
 
-  printf("sseet_member()\n");
 
   // Test per un elemento presente nel set
   if (!sset_member(set, 20)) {
