@@ -8,6 +8,7 @@ CharQueueADT mkQueue() {
   if (!q) return NULL;
   q->front = NULL;
   q->rear = NULL;
+  q->size = 0;
   return q;
 }
 
@@ -40,6 +41,7 @@ _Bool enqueue(CharQueueADT q, const char e) {
     q->front = node;
   }
   q->rear = node;
+  (q->size)++;
   return 1;
 }
 
@@ -50,21 +52,20 @@ _Bool dequeue(CharQueueADT q, char*res) {
   ListNodePtr node = q->front->next;
   free(q->front);
   q->front = node;
+  (q->size)--;
+  if (q->front == NULL) {
+    q->rear = NULL;
+  }
   return 1;
 }
 
 _Bool isEmpty(CharQueueADT q) {
-  return !(q->front);
+  return q->size == 0;
 }
 
 int size(CharQueueADT q) {
-  int c = 0;
-  ListNodePtr curr = q->front;
-  while (curr) {
-    c++;
-    curr = curr->next;
-  }
-  return c;
+  if (q) return q->size;
+  else return 0;
 }
 
 _Bool peek(CharQueueADT q, int position, char* res) {
