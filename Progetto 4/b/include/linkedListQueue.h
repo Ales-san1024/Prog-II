@@ -7,6 +7,7 @@ typedef struct listNode ListNode, *ListNodePtr;
 struct listNode {
    char data;
    ListNodePtr next;
+   int size;
 };
 
 struct charQueue {
