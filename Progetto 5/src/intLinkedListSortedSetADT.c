@@ -100,16 +100,9 @@ int sset_size(const IntSortedSetADT ss) {
 _Bool sset_extract(IntSortedSetADT ss, int *ptr) {
   //Toglie e restituisce un elemento a caso dell'insieme
   
-  if (!ss || ss->size == 0) return false;
+  if (!ss || ss->size <= 0 || !ptr) return false;
   
   
-  if (ss->size == 1) {
-    *ptr = ss->first->elem;
-    free(ss->first);
-    ss->first = ss->last = NULL;
-    ss->size = 0;
-    return true;
-}
   
   int index = rand() % ss->size; 
   ListNodePtr curr = ss->first;
@@ -123,7 +116,7 @@ _Bool sset_extract(IntSortedSetADT ss, int *ptr) {
 
   if (curr == ss->first) ss->first = curr->next;
   else if (curr == ss->last) ss->last = prev;
-  else prev = curr->next;
+  else prev->next = curr->next;
 
   *ptr = curr->elem;
   free(curr);
@@ -148,33 +141,33 @@ _Bool sset_equals(const IntSortedSetADT s1, const IntSortedSetADT s2) {
 }
 
 _Bool sset_subseteq(const IntSortedSetADT s1, const IntSortedSetADT s2) {
-  if (!s1 || !s2 || s1->size < s2->size) return false; //s2 non può essere incluso in s1 se s1->size < s2->size
+  if (!s1 || !s2 || s1->size > s2->size) return false; //s2 non può essere incluso in s1 se s1->size < s2->size
   
   ListNodePtr curr1 = s1->first;
   ListNodePtr curr2 = s2->first;
 
   while (curr1 && curr2) {
-    if (curr1->elem > curr2->elem) return false;
-    if (curr1->elem == curr2->elem) curr2 = curr2->next;
-    curr1 = curr1->next; 
+    if (curr2->elem > curr1->elem) return false;
+    if (curr2->elem == curr1->elem) curr1 = curr1->next;
+    curr2 = curr2->next; 
   }
 
-  return (!curr2);
+  return (!curr1);
 }
 
 _Bool sset_subset(const IntSortedSetADT s1, const IntSortedSetADT s2) {
-  if (!s1 || !s2 || s1->size <= s2->size) return false; //s2 non può essere incluso in s1 se s1->size < s2->size
+  if (!s1 || !s2 || s1->size >= s2->size) return false; //s2 non può essere incluso in s1 se s1->size < s2->size
   
   ListNodePtr curr1 = s1->first;
   ListNodePtr curr2 = s2->first;
 
   while (curr1 && curr2) {
-    if (curr1->elem > curr2->elem) return false;
-    if (curr1->elem == curr2->elem) curr2 = curr2->next;
-    curr1 = curr1->next; 
+    if (curr2->elem > curr1->elem) return false;
+    if (curr1->elem == curr2->elem) curr1 = curr1->next;
+    curr2 = curr2->next; 
   }
 
-  return (!curr2);
+  return (!curr1);
 }
 
 IntSortedSetADT sset_union(const IntSortedSetADT s1, const IntSortedSetADT s2) {
