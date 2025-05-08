@@ -1,0 +1,10 @@
+if (ram->s == LIBERO) {
+
+}
+if (ram->s == OCCUPATO) {
+
+}
+
+if (ram->s == INTERNO) {
+    
+}
