@@ -47,12 +47,32 @@ RAM allocram(int K, RAM ram) {
 
 
 Risultato deallocram(RAM ram) {
+  if (!ram || ram->s != OCCUPATO) return NOK;
+
+  ram->s = LIBERO;
+  RAM parent = ram->parent;
+  while (parent && parent->lbuddy->s == LIBERO && parent->rbuddy->s == LIBERO) {
+    free(parent->lbuddy);
+    parent->lbuddy = NULL;
+    free(parent->rbuddy);
+    parent->rbuddy = NULL;
+    parent->s = LIBERO;
+    parent = parent->parent;
+  }
+  
+
   return OK;
 }
 
 
 int numfree(RAM ram) {
-  return 0;
+  if (!ram || ram->s == OCCUPATO) return 0;
+
+  if (ram->s == LIBERO) return ram->KB;
+
+  if (ram->s == INTERNO) {
+    return numfree(ram->lbuddy) + numfree(ram->rbuddy);
+  }
 }
 
 
