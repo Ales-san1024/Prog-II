@@ -119,9 +119,48 @@ char* ram2str(RAM ram) {
   
 }
 
+RAM str2ramR(char **str) {
+  if (**str == ' ') (*str)++;
+  if (**str == '(') (*str)++;
+  
+  
+  int KB = 0;
+  while (**str >= '0' && **str <= '9') {
+    KB *= 10;
+    KB += **str - '0';
+    (*str)++;
+  }
+  
+  RAM ram = initram(KB);
+  if (!ram) return NULL;
 
+  (*str)++; //salta i ':'
+
+  if (**str == 'O') ram->s = OCCUPATO;
+  else if (**str == 'I') ram->s = INTERNO;
+  (*str)++;
+
+  if (ram->s == INTERNO) {
+
+    if (**str == ' ') (*str)++; //salta lo spazio
+    ram->lbuddy = str2ramR(str);
+    ram->lbuddy->parent = ram;
+    
+    (*str)++;
+    
+    ram->rbuddy = str2ramR(str);
+    ram->rbuddy->parent = ram;
+  }
+
+  
+  
+  if (**str == ')') (*str)++;
+  return ram;
+}
 RAM str2ram(char *str) {
-  return NULL;
+  if (!str) return NULL;
+
+  return str2ramR(&str);
 }
 
 Risultato freeram(RAM* ramptr) {

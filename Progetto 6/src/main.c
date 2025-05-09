@@ -54,8 +54,20 @@ int main() {
   printf("%s\n", s1);
   char* s2 = ram2str(bigram);
   printf("%s\n", s2);
+  
+  printf("str2ram()...\n");
+  RAM s2r_1 = str2ram(s1);
+  RAM s2r_2 = str2ram(s2);
+  printf("ram\n");
+  printRAM(s2r_1,1);
+  printf("bigram\n");
+  printRAM(s2r_2,1);
+  
+
   freeram(&ram);
   freeram(&bigram);
-
+  assert(!ram);
+  assert(!bigram);
+  printf("All tests passed\n");
   return 0;
 }
