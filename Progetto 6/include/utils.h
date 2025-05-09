@@ -14,7 +14,7 @@ void printNodo(RAM r);
 /**
  * @brief stampa tutti i nodi della RAM partendo dal nodo più alto
  * 
- * @param r 
+ * @param r puntatore al nodo padre
  */
 void printRAM(RAM r,int depth);
 #endif

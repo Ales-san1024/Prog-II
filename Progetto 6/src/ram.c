@@ -76,8 +76,47 @@ int numfree(RAM ram) {
 }
 
 
+void ram2strR(RAM ram, char* dest) {
+  if (!ram) return;
+  //calcolo la lunghezza del buffer
+  size_t strlen = 0;
+  int tmp = ram->KB;
+  while (tmp > 0) {
+    tmp /= 10;
+    strlen++;
+  }
+  
+  char buffer[strlen+3]; //+3 per '(' , ':' e '\0'
+  char stato;
+  
+  if (ram->s == OCCUPATO) stato = 'O';
+  else if (ram->s == LIBERO) stato = 'L';
+  else stato = 'I';
+  
+  sprintf(buffer, "(%d:%c", ram->KB, stato);
+  strcat(dest, buffer);
+
+  if (ram->s == INTERNO) {
+    strcat(dest, " ");
+    ram2strR(ram->lbuddy, dest);
+    strcat(dest, " ");
+    ram2strR(ram->rbuddy, dest);
+  }
+
+  strcat(dest, ")");
+}
+
 char* ram2str(RAM ram) {
-  return NULL;
+  if (!ram) return NULL;
+
+  char *dest = (char*)malloc(1024);
+  if (!dest) return NULL;
+  *dest = '\0';
+  
+  ram2strR(ram, dest);
+
+  return dest;
+  
 }
 
 
@@ -86,5 +125,11 @@ RAM str2ram(char *str) {
 }
 
 Risultato freeram(RAM* ramptr) {
+  if (!ramptr || !*ramptr) return NOK;
+
+  freeram(&((*ramptr)->lbuddy)); //se lbuddy non esiste freeram ritorna NOK e basta
+  freeram(&((*ramptr)->rbuddy));
+  free(*ramptr);
+  *ramptr = NULL;
   return OK;
 } 
