@@ -6,7 +6,13 @@
 
 
 
+int is_power_of_two(int n) {
+  return (n > 0) && ((n & (n - 1)) == 0);
+}
+
+
 RAM initram(int M) {
+  if (M < 0 || !is_power_of_two(M)) return NULL;
   RAM r = (RAM)malloc(sizeof(struct nodo));
   if (!r) return NULL;
   r->lbuddy = NULL;
@@ -18,12 +24,13 @@ RAM initram(int M) {
 }
 
 RAM allocram(int K, RAM ram) {
-  if (K < 0 || !ram || ram->KB < K) return NULL;
+  if (K <= 0 || !ram || ram->KB < K) return NULL;
   
   if (ram->s == LIBERO) {
     if (K <= ram->KB/2) {
       ram->lbuddy = initram(ram->KB/2);
       ram->rbuddy = initram(ram->KB/2);
+      if (!ram->lbuddy || !ram->rbuddy) return NULL;
       ram->lbuddy->parent = ram;
       ram->rbuddy->parent = ram;
       ram->s = INTERNO;
@@ -38,11 +45,11 @@ RAM allocram(int K, RAM ram) {
     return NULL;
   }
 
-  if (ram->s == INTERNO) {
-    RAM ret = allocram(K, ram->lbuddy);
-    return ret? ret : allocram(K, ram->rbuddy);
+  
+  RAM ret = allocram(K, ram->lbuddy);
+  return ret? ret : allocram(K, ram->rbuddy);
 
-  }
+  
 }
 
 
@@ -66,59 +73,53 @@ Risultato deallocram(RAM ram) {
 
 
 int numfree(RAM ram) {
-  if (!ram || ram->s == OCCUPATO) return 0;
+  if (!ram) return -1;
+  
+  if (ram->s == OCCUPATO) return 0;
 
   if (ram->s == LIBERO) return ram->KB;
 
-  if (ram->s == INTERNO) {
-    return numfree(ram->lbuddy) + numfree(ram->rbuddy);
-  }
+  
+  return numfree(ram->lbuddy) + numfree(ram->rbuddy);
+  
 }
 
 
-void ram2strR(RAM ram, char* dest) {
+void ram2strR(RAM ram, char* dest, size_t* pos) {
   if (!ram) return;
-  //calcolo la lunghezza del buffer
-  size_t strlen = 0;
-  int tmp = ram->KB;
-  while (tmp > 0) {
-    tmp /= 10;
-    strlen++;
-  }
-  
-  char buffer[strlen+3]; //+3 per '(' , ':' e '\0'
-  char stato;
-  
-  if (ram->s == OCCUPATO) stato = 'O';
-  else if (ram->s == LIBERO) stato = 'L';
-  else stato = 'I';
-  
-  sprintf(buffer, "(%d:%c", ram->KB, stato);
-  strcat(dest, buffer);
 
+  
+  *pos += sprintf(dest + *pos, "(%d:%c",
+                  ram->KB,
+                  ram->s == OCCUPATO ? 'O' :
+                  ram->s == LIBERO ? 'L' : 'I');
+
+  
   if (ram->s == INTERNO) {
-    strcat(dest, " ");
-    ram2strR(ram->lbuddy, dest);
-    strcat(dest, " ");
-    ram2strR(ram->rbuddy, dest);
+    dest[(*pos)++] = ' ';
+    ram2strR(ram->lbuddy, dest, pos);
+    dest[(*pos)++] = ' ';
+    ram2strR(ram->rbuddy, dest, pos);
   }
 
-  strcat(dest, ")");
+  
+  dest[(*pos)++] = ')';
+  dest[*pos] = '\0';
 }
 
 char* ram2str(RAM ram) {
-  if (!ram) return NULL;
 
-  char *dest = (char*)malloc(1024);
+  size_t bufsize = 4096;
+  char *dest = (char*)malloc(bufsize);
   if (!dest) return NULL;
   *dest = '\0';
-  
-  ram2strR(ram, dest);
+  if (!ram) return dest;
+  size_t pos = 0; 
+  ram2strR(ram, dest, &pos); 
+  dest[pos] = '\0';
 
   return dest;
-  
 }
-
 RAM str2ramR(char **str) {
   if (**str == ' ') (*str)++;
   if (**str == '(') (*str)++;
